@@ -16,7 +16,8 @@ if __name__ == "__main__":
         user_infos = user_infos_response.json()
 
         for user_info in user_infos:
-            todos_response = requests.get(f'{base_url}/{user_info["id"]}/todos')
+            id = user_info['id']
+            todos_response = requests.get(f'{base_url}/{id}/todos')
 
             todos = todos_response.json()
             id = user_info["id"]
