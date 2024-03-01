@@ -24,7 +24,7 @@ if __name__ == "__main__":
             if todo["completed"] is True:
                 completed_tasks.append(todo["title"])
 
-        with open('USER_ID.csv', 'w', newline='') as file:
+        with open(f'{id}.csv', 'w', newline='') as file:
             writer = csv.writer(file)
             for task in todos:
                 writer.writerow([id, user_name,
