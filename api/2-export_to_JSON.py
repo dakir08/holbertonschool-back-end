@@ -4,6 +4,7 @@ export to CSV
 """
 
 import csv
+import json
 import requests
 import sys
 
@@ -29,5 +30,17 @@ if __name__ == "__main__":
             for task in todos:
                 writer.writerow([id, user_name,
                                  task["completed"], task["title"]])
+        data = {
+            id: []
+        }
+        for task in todos:
+            data[id].append({
+                "task": task["title"],
+                "completed": task["completed"],
+                "username": user_name
+            })
+
+        with open(f'{id}.json', 'w') as f:
+            json.dump(data, f)
     except IndexError:
         print("Invalid id")
