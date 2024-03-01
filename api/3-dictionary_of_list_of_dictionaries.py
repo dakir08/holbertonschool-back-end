@@ -27,7 +27,7 @@ if __name__ == "__main__":
             for todo in todos:
                 if todo["completed"] is True:
                     completed_tasks.append(todo["title"])
-            
+
             data[id] = []
 
             for task in todos:
