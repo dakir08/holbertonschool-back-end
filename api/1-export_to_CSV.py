@@ -27,6 +27,7 @@ if __name__ == "__main__":
         with open('USER_ID.csv', 'w', newline='') as file:
             writer = csv.writer(file)
             for task in todos:
-                writer.writerow([id, user_name, task["completed"], task["title"]])
+                writer.writerow([id, user_name,
+                                 task["completed"], task["title"]])
     except IndexError:
         print("Invalid id")
