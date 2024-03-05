@@ -3,14 +3,14 @@
 returns information about his/her todo list progress
 """
 
-import requests
 import sys
+import requests
 
 if __name__ == "__main__":
-    base_url = "https://jsonplaceholder.typicode.com/users"
+    BASE_URL = "https://jsonplaceholder.typicode.com/users"
     try:
-        user_info_response = requests.get(f'{base_url}/{sys.argv[1]}')
-        todos_response = requests.get(f'{base_url}/{sys.argv[1]}/todos')
+        user_info_response = requests.get(f'{BASE_URL}/{sys.argv[1]}', timeout=5000)
+        todos_response = requests.get(f'{BASE_URL}/{sys.argv[1]}/todos', timeout=5000)
 
         todos = todos_response.json()
         user_info = user_info_response.json()
