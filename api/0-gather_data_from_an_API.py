@@ -21,7 +21,7 @@ if __name__ == "__main__":
         completed_tasks = []
 
         for todo in todos:
-            if todo["completed"] == True:
+            if todo["completed"] is True:
                 completed_tasks.append(todo["title"])
 
         print(f"Employee {user_name} is done with tasks"
