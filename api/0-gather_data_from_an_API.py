@@ -3,8 +3,8 @@
 returns information about his/her todo list progress
 """
 
-import sys
 import requests
+import sys
 
 if __name__ == "__main__":
     BASE_URL = "https://jsonplaceholder.typicode.com/users"
