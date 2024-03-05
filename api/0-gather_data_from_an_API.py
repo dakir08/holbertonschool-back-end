@@ -9,8 +9,10 @@ import requests
 if __name__ == "__main__":
     BASE_URL = "https://jsonplaceholder.typicode.com/users"
     try:
-        user_info_response = requests.get(f'{BASE_URL}/{sys.argv[1]}', timeout=5000)
-        todos_response = requests.get(f'{BASE_URL}/{sys.argv[1]}/todos', timeout=5000)
+        user_info_response = requests.get(f'{BASE_URL}/{sys.argv[1]}',
+                                          timeout=5000)
+        todos_response = requests.get(f'{BASE_URL}/{sys.argv[1]}/todos',
+                                      timeout=5000)
 
         todos = todos_response.json()
         user_info = user_info_response.json()
